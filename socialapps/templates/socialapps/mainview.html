@@ -1,0 +1,24 @@
+<!doctype html>
+
+{% extends 'socialapps/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="heading_data">Go to the apps</h1>
+  <div class="heading_sub_">
+    <span class="heading_sub"><a href="{% url 'fb' %}" class="heading_data">facebook</a></span>
+    <span class="heading_sub"><a href="{% url 'home' %}" class="heading_data">Instagram</a></span>
+  </div>
+<div>
+  <div>
+    <span>
+    <div class="fbintsa_btn">
+    <span  class='mainview_content'><button  style="background-color:#3B5998;"  id="fbintsa_btn" type="button" onclick="location.href='{% url 'fb' %}'">Facebook</button></span>
+    <span  class='mainview_content'><button  style="background-color: #8134AF;" id="fbintsa_btn" type="button" onclick="location.href='{% url 'home' %}'">Instagram</button></span>
+    </div>
+    </span>
+    <span><img class='image_all' src = "{% static 'insta_fb.png' %}" height="300"> </span>
+    </div>
+</div>
+
+{% endblock %}

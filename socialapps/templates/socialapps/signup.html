@@ -1,0 +1,30 @@
+<!doctype html>
+
+{% extends 'socialapps/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="heading_data">Go to the apps<a style="float:right; font-size:30px;"href="{% url 'login' %}">Sign-In</a></h1>
+  <div class="heading_sub_">
+    <span class="heading_sub"><a href="javascript:AlertIt();" class="heading_data">facebook</a></span>
+    <span class="heading_sub"><a href="javascript:AlertIt();" class="heading_data">Instagram</a></span>
+  </div>
+<div>
+  <div>
+    <span>
+    <div class="fbintsa_btn">
+      <div >
+      <form  method="POST">
+        {% csrf_token %}
+        <div style="background-color:#99ccff; padding:30px;margin-right:1400px;"><b>{{ form.as_p}}</b>
+        <button type="submit">Register</button>
+        </div>
+      </form>
+      </div>
+    </div>
+    </span>
+    <span><img style = "margin-top:-700px;" class='image_all' src = "{% static 'insta_fb.png' %}"height="300"> </span>
+    </div>
+</div>
+
+{% endblock %}

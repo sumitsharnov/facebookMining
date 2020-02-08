@@ -1,0 +1,45 @@
+
+ <!doctype html>
+{% extends 'socialapps/base.html' %}
+<html lang="en">
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
+{% block content %}
+<h2 class="heading_data" style="color:white" >Welcome to Facebook<a style="float:right; color:white;font-size:15px;"href="{% url 'home' %}">Logout</a></h2>
+<div>
+ <div>
+    <div class="cnt_fb_img">
+      <h2 style="color:white">My Pictures</h2>
+        {% for i in item %}
+           <a href="{{ i.image_url }}">
+             <img class="fb_images"  src="{{ i.image_file.url }}" height="200" width="200">
+           </a>
+        {% endfor %}
+      </div>
+        <div>
+        <h2 style="color:white; margin-top:-1327px;">My Posts</h2>
+        </div>
+          <div style="margin-right:300px; overflow:scroll;height:500px;width:62%;">
+            <table>
+              <tr>
+                <th style="color:white">Post URL</th>
+                <th style="color:white">Status Type</th>
+                <th style="color:white">Status Source</th>
+                <th style="color:white">Caption</th>
+                <th style="color:white">Post Time</th>
+              </tr>
+              {% for myPost in myPosts %}
+              <tr>
+                <td style="color:#ffff80"><a href="{{myPost.post_url}}">{{ myPost.post_url }}</a></td>
+                <td style="color:#ffff80">{{ myPost.status_type }}</td>
+                <td style="color:#ffff80">{{ myPost.status_source }}</td>
+                <td style="color:#ffff80">{{ myPost.caption }}</td>
+                <td style="color:#ffff80">{{ myPost.post_time }}</td>
+              </tr>
+              {% endfor %}
+            </table>
+        </div>
+  </div>
+</div>
+{% endblock %}
+</html>

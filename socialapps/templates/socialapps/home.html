@@ -1,0 +1,27 @@
+
+<!doctype html>
+
+{% extends 'socialapps/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="heading_data">Go to the apps</h1>
+  <div class="heading_sub_">
+    <span class="heading_sub"><a href="javascript:AlertIt();" class="heading_data">facebook</a></span>
+    <span class="heading_sub"><a href="javascript:AlertIt();" class="heading_data">Instagram</a></span>
+  </div>
+<div>
+  <div>
+    <span>
+    <div class="fbintsa_btn">
+      <form  class="register_form" method='GET'>
+        <span class= "signupin"><input class="signup" type="submit" value="SignUp" width="100" height="100" onclick="javascript: form.action='{% url 'signup' %}';" /></span>
+        <span class= "signupin"><input class="signin" type="submit" value="Sign-in" width="100" height="100" onclick="javascript: form.action='{% url 'login' %}';" /></span>
+      </form>
+    </div>
+    </span>
+    <span  ><img class='image_all' src = "{% static 'insta_fb.png' %}" height="300"> </span>
+    </div>
+</div>
+
+{% endblock %}
